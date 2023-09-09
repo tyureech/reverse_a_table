@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Date, Integer, Time, ForeignKey, CheckConstraint
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import CheckConstraint, Column, Date, ForeignKey, Integer, Time
+from sqlalchemy.orm import relationship
 
 from app.database import Base
 
@@ -18,11 +18,16 @@ class Booking(Base):
         ForeignKey("tables.id", ondelete="CASCADE", onupdate="CASCADE"),
         nullable=False,
     )
-    persons = Column(Integer, CheckConstraint("persons>1 and persons<9"), nullable=False)
+    persons = Column(
+        Integer, 
+        CheckConstraint("persons>1 and persons<9"), 
+        nullable=False
+    )
     date = Column(Date, nullable=False)
     time_from = Column(Time, nullable=False)
     time_to = Column(Time, nullable=False)
     CheckConstraint("persons > 0 and persons < 9", name="persons")
+
 
     user = relationship("User", back_populates="booking")
     table = relationship("Table", back_populates="booking")

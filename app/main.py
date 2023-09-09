@@ -1,17 +1,12 @@
 from fastapi import FastAPI
 from sqladmin import Admin
 
-from app.admin.view import (
-    BookingAdmin,
-    UserAdmin,
-    RestaurantAdmin,
-    TableAdmin,
-)
+from app.admin.view import BookingAdmin, RestaurantAdmin, TableAdmin, UserAdmin
 from app.bookings.routers import router as router_booking
 from app.database import engine
-from app.users.routers import router as router_user
 from app.restaurants.routers import router as router_restaurant
 from app.tables.routers import router as router_table
+from app.users.routers import router as router_user
 
 app = FastAPI()
 

@@ -1,8 +1,6 @@
-from datetime import datetime, timedelta, time
-import pytz
+from datetime import datetime, time, timedelta
 
 from app.exceptions import (
-    FromOneToEightPersons,
     IncorrectInterva,
     MinimumIntervalOneHour,
     RestaurantIsOpenFrom09to23,
@@ -23,7 +21,7 @@ def check_time_interval(date, time_from, time_to):
         or time_to < opening_time
     ):
         raise RestaurantIsOpenFrom09to23
-    
+
     if time_from >= time_to:
         raise IncorrectInterva
 

@@ -1,33 +1,21 @@
-from datetime import date, time
 from fastapi import APIRouter, status
 
 from app.bookings.dao import BookingDAO
 from app.bookings.schemas import SBooking
 from app.bookings.utils import check_time_interval, validate_booking
-from app.exceptions import (
-    FromOneToEightPersons,
-    RestaurantNotFound,
-    TableFullyBooked,
-    UserNotFound,
-)
-from app.restaurants.dao import RestaurantDAO
-from app.users.dao import UserDAO
 
 router = APIRouter(prefix="/bookings", tags=["Бронирование"])
 
 
 @router.post("/add/", status_code=status.HTTP_201_CREATED)
 async def add_bookings(booking: SBooking):
-    #TODO pydantic
     check_time_interval(booking.date, booking.time_from, booking.time_to)
 
-    #TODO naming
     await validate_booking(
         booking.user_id,
         booking.restaurant_id,
     )
 
-    #TODO does not return list
     tables_left = await BookingDAO.find_tables_left(
         restaurant_id=booking.restaurant_id,
         date=booking.date,

@@ -1,45 +1,68 @@
-RESTUARANT_DATA = [
+from datetime import datetime
+
+BOOKING_DATA = [
+    {
+        "user_id": 1,
+        "table_id": 3,
+        "persons": 5,
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("12:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("14:00:00", "%H:%M:%S").time(),
+    },
     {
         "user_id": 2,
         "table_id": 3,
         "persons": 5,
-        "date": "2012-12-12",
-        "time_from": "12:00:00",
-        "time_to": "14:00:00",
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("12:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("14:00:00", "%H:%M:%S").time(),
+    },
+    {
+        "user_id": 3,
+        "table_id": 3,
+        "persons": 5,
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("12:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("14:00:00", "%H:%M:%S").time(),
+    },
+    {
+        "user_id": 4,
+        "table_id": 3,
+        "persons": 5,
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("12:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("14:00:00", "%H:%M:%S").time(),
+    },
+    {
+        "user_id": 5,
+        "table_id": 3,
+        "persons": 5,
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("11:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("12:00:00", "%H:%M:%S").time(),
+    },
+    {
+        "user_id": 7,
+        "table_id": 3,
+        "persons": 5,
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("14:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("15:00:00", "%H:%M:%S").time(),
     },
     {
         "user_id": 1,
         "table_id": 3,
         "persons": 5,
-        "date": "2012-12-12",
-        "time_from": "12:00:00",
-        "time_to": "14:00:00",
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("22:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("23:00:00", "%H:%M:%S").time(),
     },
     {
-
         "user_id": 1,
         "table_id": 3,
         "persons": 5,
-        "date": "2012-12-12",
-        "time_from": "12:00:00",
-        "time_to": "14:00:00",
+        "date": datetime.strptime("2022-12-12", "%Y-%m-%d").date(),
+        "time_from": datetime.strptime("09:00:00", "%H:%M:%S").time(),
+        "time_to": datetime.strptime("10:00:00", "%H:%M:%S").time(),
     },
-    {
-
-        "user_id": 1,
-        "table_id": 3,
-        "persons": 5,
-        "date": "2012-12-12",
-        "time_from": "12:00:00",
-        "time_to": "14:00:00",
-    },
-    {
-
-        "user_id": 1,
-        "table_id": 3,
-        "persons": 5,
-        "date": "2012-12-12",
-        "time_from": "12:00:00",
-        "time_to": "14:00:00",
-    }
 ]

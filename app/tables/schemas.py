@@ -9,5 +9,5 @@ class STable(BaseModel):
     @validator("number_seats")
     def must_be_even(cls, value):
         if value % 2 != 0:
-            raise ValueError('Число должно быть четным')
+            raise ValueError("Число должно быть четным")
         return value

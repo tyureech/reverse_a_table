@@ -1,10 +1,11 @@
-from sqlalchemy import select, and_, or_, insert
+from sqlalchemy import and_, insert, or_, select
 from sqlalchemy.sql.functions import count
+
 from app.bookings.models import Booking
 from app.dao.base import BaseDAO
+from app.database import async_session_maker
 from app.exceptions import TableFullyBooked, TableNotFoundRestaurant
 from app.tables.models import Table
-from app.database import async_session_maker, engine
 
 
 class BookingDAO(BaseDAO):
@@ -59,7 +60,7 @@ class BookingDAO(BaseDAO):
             )
             # print(query_tables_left.compile(engine, compile_kwargs={"literal_binds": True}))
             table_left = await session.execute(query_tables_left)
-            #TODO 
+            # TODO
             table_data = table_left.mappings().all()
             # если таблица не существует значит все столы свободны
             if not table_data:
@@ -75,10 +76,8 @@ class BookingDAO(BaseDAO):
                 raise TableFullyBooked
             return table_data
 
-
     @classmethod
     async def add(cls, table_id, user_id, restaurant_id, date, time_from, time_to, persons):
-
         async with async_session_maker() as session:
             add_booking = (
                 insert(Booking)
@@ -97,4 +96,3 @@ class BookingDAO(BaseDAO):
             booking_data = dict(booking.mappings().one())
             booking_data.update({"restaurant_id": restaurant_id})
             return booking_data
-

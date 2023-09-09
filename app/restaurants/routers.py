@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.restaurants.dao import RestaurantDAO
 from app.restaurants.schemas import SRestaurant
 
-
 router = APIRouter(prefix="/restaurant", tags=["Рестораны"])
 
 

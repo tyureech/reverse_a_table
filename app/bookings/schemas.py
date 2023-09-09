@@ -1,7 +1,6 @@
 from datetime import date, time
-from datetime import time
 
-from pydantic import BaseModel, validator, Field
+from pydantic import BaseModel, Field, validator
 
 
 class SBooking(BaseModel):
@@ -12,9 +11,8 @@ class SBooking(BaseModel):
     time_to: time
     persons: int = Field(ge=1, le=8)
 
-    @validator('time_from', 'time_to', pre=True)
+    @validator("time_from", "time_to", pre=True)
     def remove_z_from_time(cls, value):
-        if isinstance(value, str) and value.endswith('Z'):
-            print(value)
+        if isinstance(value, str) and value.endswith("Z"):
             value = value[:-1]
         return value

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Date, Integer, Time, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -16,7 +16,7 @@ class Table(Base):
     quantity = Column(Integer, nullable=False)
 
     restaurant = relationship("Restaurant", back_populates="table")
-    booking = relationship("Booking", back_populates="table", cascade='all, delete')
+    booking = relationship("Booking", back_populates="table", cascade="all, delete")
 
     def __str__(self) -> str:
         return f"{self.quantity} столиков на {self.number_seats} места"

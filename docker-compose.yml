@@ -1,3 +1,4 @@
+name: booking_table
 services:
   db:
     image: postgres:14.7
@@ -8,11 +9,11 @@ services:
       - POSTGRES_DB=bookingsDB
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=bookings_pass132
-  # backend:
-  #   container_name: backend
-  #   build: .
-  #   ports:
-  #     - 7777:8000
-  #   depends_on:
-  #     - db
-  #   command: ["sh", "run_backend.sh"]
+  backend:
+    container_name: backend
+    build: .
+    ports:
+      - 7777:8000
+    depends_on:
+      - db
+    command: ["sh", "run_backend.sh"]

@@ -1,14 +1,16 @@
-from app.database import engine, Base
+from app.bookings.dao import BookingDAO
 from app.bookings.models import Booking
+from app.database import Base, engine
+from app.restaurants.dao import RestaurantDAO
+from app.restaurants.models import Restaurant
+from app.tables.dao import TableDAO
+from app.tables.models import Table
 from app.users.dao import UserDAO
 from app.users.models import User
-from app.restaurants.models import Restaurant
-from app.tables.models import Table
-from data.users import USER_DATA
+from data.bookings import BOOKING_DATA
 from data.restaurants import RESTUARANT_DATA
 from data.tables import TABLE_DATA
-from app.restaurants.dao import RestaurantDAO
-from app.tables.dao import TableDAO
+from data.users import USER_DATA
 
 
 async def recreate_db():
@@ -22,3 +24,4 @@ async def recreate_db():
     await RestaurantDAO.multiple_add(RESTUARANT_DATA)
     await TableDAO.multiple_add(TABLE_DATA)
     await UserDAO.multiple_add(USER_DATA)
+    await BookingDAO.multiple_add(BOOKING_DATA)

@@ -1,8 +1,10 @@
 import asyncio
+
 import pytest
 from httpx import AsyncClient
-from app.main import app
 from prepare_db import recreate_db
+
+from app.main import app
 
 
 @pytest.fixture(scope="session", autouse=True)
