@@ -1,0 +1,17 @@
+USER_DATA = [
+    {"name": "Алена", "email": "alenka2077@yandex.ru"},
+    {"name": "Алина", "email": "alina21@gmail.com"},
+    {"name": "Сергей", "email": "serega@gmail.com"},
+    {"name": "Анастасия", "email": "stasia@mail.ru"},
+    {"name": "Абико", "email": "abiko@mail.kz"},
+    {"name": "Алена", "email": "alena2076@yandex.ru"},
+    {"name": "Алина", "email": "alina21_2@gmail.com"},
+    {"name": "Daniel", "email": "daniel@gmail.com"},
+    {"name": "Margo", "email": "margo@mail.ru"},
+    {"name": "Алексей", "email": "alex@mail.kz"},
+    {"name": "Артем", "email": "bogach@yandex.ru"},
+    {"name": "Алина", "email": "alinaka24@gmail.com"},
+    {"name": "Сергей", "email": "serega24@gmail.com"},
+    {"name": "Анастасия", "email": "stasia_n@mail.ru"},
+    {"name": "Абико", "email": "abiko_aaa@mail.kz"},
+]
